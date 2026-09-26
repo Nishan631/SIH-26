@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seizure monitoring</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <aside class="sidebar">
+        <a class="brand" href="#overview"><span class="brand-mark">S</span><span>Neuro<span>Sentinel</span></span></a>
+        <nav aria-label="Main navigation">
+          <a class="active" href="#overview"><span>⌂</span>Overview</a>
+          <a href="#monitoring"><span>⌁</span>Live monitoring</a>
+          <a href="#history"><span>◴</span>History</a>
+          <a href="#profile"><span>◌</span>Patient profile</a>
+        </nav>
+        <section class="clinician">
+          <div class="avatar small">abc</div><div><strong>abc</strong><small>My account</small></div>
+          <button class="more" aria-label="More options">•••</button>
+        </section>
+      </aside>
+
+      <section class="content" id="overview">
+        <header class="topbar">
+          <div><p class="eyebrow">MY SEIZURE SAFETY <span class="pulse-dot"></span> LIVE</p><h1>Your safety, at a glance.</h1></div>
+          <div class="header-actions"><button class="icon-button" aria-label="Notifications">♧<i></i></button><button class="export" id="exportBtn">Download summary <span>↓</span></button></div>
+        </header>
+
+        <section class="profile-card" id="profile">
+          <div class="profile-main"><div class="avatar patient">AM</div><div><div class="name-line"><h2>abc</h2><span class="verified">✓ Verified</span></div><p>Patient ID <strong>NW-20481</strong> <b>·</b> Female, 24 years</p><p class="condition">Focal epilepsy <span>•</span> Personal monitoring active since May 2024</p></div></div>
+          <div class="monitor-status"><span class="status-orb">⌁</span><div><small>MONITORING STATUS</small><strong>Device connected</strong><p><i></i> Synced just now</p></div></div>
+        </section>
+
+        <section class="metrics" aria-label="Patient metrics">
+          <article><div class="metric-label">SEIZURES THIS MONTH <span class="metric-icon red">⌁</span></div><strong>2</strong><p class="down">↓ 33% <span>vs. last month</span></p></article>
+          <article><div class="metric-label">LAST SEIZURE <span class="metric-icon amber">◷</span></div><strong>Sep 14</strong><p>9:42 PM <span>· 1m 18s duration</span></p></article>
+          <article><div class="metric-label">SEIZURE-FREE DAYS <span class="metric-icon green">✓</span></div><strong>12 <small>days</small></strong><p class="up">↑ 4 days <span>best streak: 28 days</span></p></article>
+        </section>
+
+        <section class="dashboard-grid" id="history">
+          <article class="trend-card"><div class="card-heading"><div><p class="eyebrow">SEIZURE ACTIVITY</p><h2>Monthly trend</h2></div><button class="select" id="rangeBtn">Last 6 months <span>⌄</span></button></div><div class="chart-wrap"><div class="y-axis"><span>8</span><span>6</span><span>4</span><span>2</span><span>0</span></div><svg id="trendChart" role="img" aria-label="Monthly seizure trend from April through September"></svg></div><div class="chart-key"><span><i class="dot coral"></i>Seizures</span><span><i class="dot mint"></i>Seizure-free days</span><p>4 fewer episodes than previous 6 months</p></div></article>
+
+          <article class="insight-card"><div class="card-heading"><div><p class="eyebrow">YOUR PATTERN</p><h2>Pattern snapshot</h2></div><span class="spark">✦</span></div><div class="insight-stat"><strong>68%</strong><p>of episodes occurred<br>between <b>8 PM – 2 AM</b></p></div><div class="time-bars" aria-label="Episode distribution by time of day"><span style="height:18%">Morning</span><span style="height:31%">Afternoon</span><span style="height:48%">Evening</span><span class="selected" style="height:92%">Night</span></div><p class="note">Keep your support circle informed of your safety plan.</p></article>
+        </section>
+
+        <section class="demo-card" id="monitoring">
+          <div class="card-heading"><div><p class="eyebrow">INTERACTIVE SAFETY DEMO</p><h2>See how detection works</h2><p class="demo-subtitle">A 60-second sample moves from normal activity into a detected seizure event.</p></div><button class="demo-button" id="demoBtn"><span>▶</span> Start demo</button></div>
+          <div class="demo-layout"><div class="eeg-panel"><div class="eeg-head"><span>LIVE EEG · 8 CHANNELS</span><span id="signalState">Waiting to start</span></div><canvas id="eegCanvas" width="760" height="270" aria-label="Animated eight channel EEG signal graph"></canvas><div class="channel-legend"><span>Fp1-F7</span><span>F7-T7</span><span>T7-P7</span><span>P7-O1</span><span>Fp2-F8</span><span>F8-T8</span><span>T8-P8</span><span>P8-O2</span></div></div><div class="demo-status"><p class="eyebrow">DETECTION TIMELINE</p><div class="timeline"><i id="timelineFill"></i><span class="timeline-point start">0s</span><span class="timeline-point event">30s</span><span class="timeline-point end">60s</span><b id="playhead"></b></div><div class="detection-state" id="detectionState"><span class="state-icon">⌁</span><div><small>MODEL STATUS</small><strong>Ready for demo</strong><p>Press start to play sample EEG.</p></div></div><div class="emergency-note" id="emergencyNote" aria-live="polite"><span>✓</span><div><strong>Emergency contacts notified</strong><p>Safety alert sent to Maya and Rahul.</p></div></div></div></div>
+        </section>
+
+        <section class="live-card"><div class="card-heading"><div><p class="eyebrow">RECENT EEG ANALYSIS</p><h2>Recent detection windows</h2></div><span class="live-chip"><i></i> Streaming</span></div><div id="detectionRows" class="detection-rows"></div><p class="model-note">Model view: 8 channels · 5-second windows · random forest classifier</p></section>
+      </section>
+    </main>
+    <div class="toast" id="toast">Report download prepared</div>
+    <script src="app.js"></script>
+  </body>
+</html>

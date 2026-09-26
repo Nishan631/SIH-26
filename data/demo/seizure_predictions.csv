@@ -1,0 +1,13 @@
+start_time,end_time,seizure_probability,status
+2980.0,2985.0,0.0,Normal
+2985.0,2990.0,0.0,Normal
+2990.0,2995.0,0.0,Normal
+2995.0,3000.0,1.0,Seizure
+3000.0,3005.0,1.0,Seizure
+3005.0,3010.0,1.0,Seizure
+3010.0,3015.0,1.0,Seizure
+3015.0,3020.0,1.0,Seizure
+3020.0,3025.0,1.0,Seizure
+3025.0,3030.0,1.0,Seizure
+3030.0,3035.0,1.0,Seizure
+3035.0,3040.0,1.0,Seizure
