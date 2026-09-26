@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fatigue Monitoring</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="demo.css" />
+    <link rel="stylesheet" href="prediction.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">F</span><span>Fatigue Monitoring</span></a>
+      <p class="eyebrow nav-label">WORKSPACE</p>
+      <nav>
+        <a class="nav-item active" href="#overview"><span>▦</span> Overview</a>
+        <a class="nav-item" href="#trend"><span>⌁</span> Fatigue trend</a>
+        <a class="nav-item" href="#session"><span>◉</span> Live session</a>
+        <a class="nav-item" href="#reports"><span>▤</span> Reports</a>
+      </nav>
+      <div class="sidebar-foot">
+        <div class="support-icon">?</div>
+        <div><strong>Need help?</strong><small>Contact care support</small></div>
+      </div>
+    </aside>
+
+    <main>
+      <header>
+        <div class="welcome"><p class="eyebrow">PERSONAL FATIGUE DASHBOARD</p><h1>Your fatigue overview</h1><p>Stay aware of your patterns and fatigue alerts.</p></div>
+        <div class="header-actions"><button class="icon-btn" aria-label="Notifications">♧<i></i></button><button class="profile-chip"><span class="doctor-avatar">xyz</span><span>xyz<small>My account</small></span><b>⌄</b></button></div>
+      </header>
+
+      <section class="patient-card" id="overview">
+        <div class="patient-main">
+          <div class="patient-avatar">NR<span></span></div>
+          <div><p class="eyebrow">MY PROFILE</p><h2>xyz</h2><div class="patient-details"><span>Personal ID <b>FM-2048</b></span><span>•</span><span>34 years</span><span>•</span><span>Female</span></div></div>
+        </div>
+        <div class="patient-actions"><span class="status-pill"><i></i> Monitoring active</span><button class="ghost-btn">My emergency contacts <span>→</span></button></div>
+      </section>
+
+      <section class="panel demo-panel" aria-labelledby="demoTitle">
+        <div class="panel-heading"><div><p class="eyebrow">INTERACTIVE SIMULATION</p><h3 id="demoTitle">EEG monitoring demo</h3><p class="demo-subtitle">Eight-channel signal processing synced with the supplied fatigue-prediction windows.</p></div><div class="demo-actions"><button class="demo-btn" id="startDemo">▶ Start demo</button><button class="stop-btn" id="stopDemo" disabled>■ Stop alarm</button></div></div>
+        <div class="demo-status" id="demoStatus"><span class="status-light"></span><div><b>Ready to begin</b><p>Press Start demo to simulate a real-time monitoring session.</p></div><span class="demo-time" id="demoTime">00:00</span></div>
+        <div class="eeg-area"><div class="channel-labels" id="channelLabels"></div><canvas id="eegCanvas" width="1000" height="320" aria-label="Real-time eight-channel EEG signal graph"></canvas></div>
+        <div class="prediction-panel"><div class="prediction-header"><div><p class="eyebrow">DETECTION WINDOWS</p><h4>Fatigue probability &amp; status</h4></div><div class="window-readout"><span id="windowRange">—</span><b id="windowProbability">Waiting</b></div></div><canvas id="predictionCanvas" width="1000" height="160" aria-label="Synced fatigue prediction probability graph"></canvas><div class="prediction-legend"><span><i class="legend-normal"></i> Normal / monitor</span><span><i class="legend-detected"></i> Fatigue detected</span><span><i class="legend-high"></i> High fatigue risk</span></div></div>
+        <div class="demo-timeline"><div class="timeline-head"><span>FATIGUE TIMELINE</span></div><div class="timeline-track"><i id="timelineProgress"></i></div></div>
+      </section>
+
+      <section class="metrics">
+        <article class="metric-card focus"><div class="metric-top"><span class="metric-icon coral">⌇</span><span class="delta up">↑ 12% vs Aug</span></div><p>Fatigue this month</p><h2>14<span> days</span></h2><div class="micro-bars" id="fatigueBars"></div></article>
+        <article class="metric-card"><div class="metric-top"><span class="metric-icon amber">◷</span><span class="muted-label">LAST EVENT</span></div><p>Last fatigue episode</p><h2>Today<span>, 10:42 AM</span></h2><div class="severity-line"><span></span><b>High fatigue risk</b></div></article>
+        <article class="metric-card"><div class="metric-top"><span class="metric-icon mint">✓</span><span class="delta good">↑ 3 days vs Aug</span></div><p>Fatigue-free days</p><h2>16<span> days</span></h2><div class="progress"><span style="width:53%"></span></div></article>
+        <article class="metric-card score-card"><div class="metric-top"><span class="metric-icon violet">◌</span><span class="muted-label">THIS WEEK</span></div><p>Recovery score</p><h2>76<span>/100</span></h2><div class="score-caption">Good <span>↑ 8 points</span></div></article>
+      </section>
+
+      <section class="dashboard-grid" id="trend">
+        <article class="panel trend-panel"><div class="panel-heading"><div><p class="eyebrow">PERSONAL HISTORY</p><h3>Fatigue trend</h3></div><div class="chart-control"><button class="active">6 months</button><button>1 year</button></div></div><div class="legend"><span><i class="legend-dot fatigue"></i> Fatigue days</span><span><i class="legend-dot clear"></i> Fatigue-free days</span></div><div class="chart-wrap"><div class="y-labels"><span>30</span><span>20</span><span>10</span><span>0</span></div><svg id="trendChart" viewBox="0 0 700 236" preserveAspectRatio="none" aria-label="Six-month fatigue trend chart"></svg></div><div class="x-labels"><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span></div><div class="insight"><span class="insight-star">✦</span><p><b>Pattern detected:</b> Fatigue levels are higher this month than usual. Consider reviewing sleep consistency.</p><button>View insights →</button></div></article>
+
+        <article class="panel session-panel" id="session"><div class="panel-heading"><div><p class="eyebrow">CURRENT SESSION</p><h3>Live fatigue monitor</h3></div><span class="live-pill"><i></i> LIVE</span></div><div class="gauge-wrap"><svg class="gauge" viewBox="0 0 220 120"><path d="M20,110 A90,90 0 0,1 200,110" pathLength="100" class="gauge-track"/><path d="M20,110 A90,90 0 0,1 200,110" pathLength="100" class="gauge-value"/><text x="110" y="78" text-anchor="middle" class="gauge-number">68%</text><text x="110" y="98" text-anchor="middle" class="gauge-caption">FATIGUE PROBABILITY</text></svg></div><div class="session-alert"><span>!</span><div><b>Fatigue detected</b><p>Elevated risk since 10:42 AM</p></div></div><div class="session-meta"><span>Session duration <b>02:18:34</b></span><span>Signal quality <b class="signal">● Excellent</b></span></div><button class="full-btn" id="detailsButton">View session details <span>→</span></button></article>
+      </section>
+
+      <section class="bottom-grid" id="reports"><article class="panel activity"><div class="panel-heading"><div><p class="eyebrow">RECENT ACTIVITY</p><h3>Latest fatigue events</h3></div><button class="text-btn">View all →</button></div><div class="events"><div><span class="event-dot red"></span><p><b>High fatigue risk detected</b><small>Today, 10:42 AM · 68% probability</small></p><em>Review</em></div><div><span class="event-dot orange"></span><p><b>Fatigue detected</b><small>Yesterday, 3:16 PM · 57% probability</small></p><em>Reviewed</em></div><div><span class="event-dot green"></span><p><b>Recovered to normal state</b><small>Sep 23, 11:08 AM</small></p><em>—</em></div></div></article><article class="panel tip"><span class="tip-icon">✦</span><div><p class="eyebrow">CARE SUGGESTION</p><h3>Encourage a reset</h3><p>xyz’s recent fatigue pattern suggests a short break and hydration may help.</p><button class="text-btn">Read recommendation →</button></div></article></section>
+    </main>
+    <div class="toast" id="toast">Session details would open here in the full app.</div>
+    <div class="emergency-alert" id="emergencyAlert" role="alert"><span class="alert-symbol">!</span><div><b>Fatigue detected</b><p>Alarm is active. Emergency contacts have been notified.</p></div><button id="dismissAlert" aria-label="Close notification">×</button></div>
+    <script src="app.js"></script>
+    <script src="demo.js"></script>
+  </body>
+</html>

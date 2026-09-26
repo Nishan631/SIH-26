@@ -1,0 +1,21 @@
+sample_index,start_time,end_time,actual_state,predicted_state,drowsy_probability,status
+0,0,3,Alert,Drowsy,0.5687999999999999,Fatigue Detected
+1,3,6,Alert,Alert,0.25793333333333335,Alert / Normal
+2,6,9,Alert,Drowsy,0.5247,Fatigue Detected
+3,9,12,Alert,Alert,0.3041,Alert / Normal
+4,12,15,Alert,Alert,0.27893333333333326,Alert / Normal
+5,15,18,Alert,Alert,0.42289999999999994,Monitor
+6,18,21,Alert,Alert,0.40333333333333327,Monitor
+7,21,24,Alert,Alert,0.29183809523809523,Alert / Normal
+8,24,27,Alert,Alert,0.48286666666666667,Monitor
+9,27,30,Alert,Alert,0.4385380952380951,Monitor
+94,30,33,Drowsy,Drowsy,0.9574666666666666,High Fatigue Risk
+95,33,36,Drowsy,Drowsy,0.7971333333333332,High Fatigue Risk
+96,36,39,Drowsy,Drowsy,0.8272476190476191,High Fatigue Risk
+97,39,42,Drowsy,Drowsy,0.6856,Fatigue Detected
+98,42,45,Drowsy,Drowsy,0.8355809523809523,High Fatigue Risk
+99,45,48,Drowsy,Drowsy,0.7046539682539684,Fatigue Detected
+100,48,51,Drowsy,Drowsy,0.5701666666666668,Fatigue Detected
+101,51,54,Drowsy,Drowsy,0.8245333333333332,High Fatigue Risk
+102,54,57,Drowsy,Drowsy,0.8048666666666665,High Fatigue Risk
+103,57,60,Drowsy,Drowsy,0.7778809523809526,High Fatigue Risk
